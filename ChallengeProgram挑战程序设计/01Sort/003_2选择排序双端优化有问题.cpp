@@ -10,14 +10,14 @@ int main(){
     int min = 0;
     int max = size-1;
     for(int i = 0;i<size-1-i;i++){
-        min = i;  // 每次确定开头(这个忘了会反复找值排序)
+        min = i; 
         max = size -1-i;
         if (a[min] > a[max]){
             swap( min, max);
         }         
         for(int j = i+1;j<size-1-i;j++){
             if(a[min]>a[j]){
-                min = j;          
+                min = j;           
             }
             if(a[max]<a[j]){
                 max = j;

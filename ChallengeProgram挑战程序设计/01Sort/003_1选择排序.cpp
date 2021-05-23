@@ -7,7 +7,7 @@ int main(){
     int size = sizeof(a)/sizeof(a[0]);
     int min = 0;
     for(int i = 0;i<size;i++){
-        min = i;
+        min = i;  // 每次确定开头(这个忘了会反复找值排序)
        for(int j = i;j<size;j++){
             if(a[min]>a[j]){
                 min = j;          
