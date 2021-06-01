@@ -2,9 +2,13 @@
 // 模板目的是为了泛型
 #include<iostream>
 
-#include "001_6student.h"
+#include "000_6student.h"
+#include "000_随机生成数字.h"
+
 using namespace std;
 
+
+// 插入排序基本算法
 template<typename T>
 void selectionSort(T arr[],int n){
     for(int i = 0;i<n;i++){
@@ -50,5 +54,26 @@ int main(){
     }
     cout<<endl;
 
-     return 0;
+
+    // 利用模板进行排序
+    // 随机的种子数量
+    int n = 100000;
+    int *arr = SortTestHelper::generateRandomArray(n,0,n);
+    // selectionSort(arr,n);
+    // for(int i = 0;i<n;i++)
+    //     cout<<arr[i]<<" ";
+    // cout<<endl;
+    
+    //SortTestHelper::printArray(arr,n);
+    SortTestHelper::testSort("选择排序",selectionSort,arr,n);
+
+
+    delete[] arr;
+
+    return 0;
+
+   
+
+    //随机生成数字测试
+
 }
