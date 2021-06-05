@@ -36,7 +36,6 @@ void __merge(T arr[],int l,int mid,int r){
     // 归并
     int i = l,j = mid +1;
     for(int k = l;k<=r;k++){
-        
         if(i>mid){
             arr[k] = aux[j-l];
             j++;
