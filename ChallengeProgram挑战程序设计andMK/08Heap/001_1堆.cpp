@@ -65,6 +65,22 @@ private:
         } 
     }
 
+    //取出元素
+    void shiftDown(int k){
+        while (2*k<=count)
+        {
+            int j = 2*k;//此轮循环 data[k]和data[i]交换位置
+            if(j+1 <=count && data[j+1]>data[j])
+                j+=1;
+            if(data[k]>=data[j])
+                break;
+
+            swap(data[k],data[j]);
+            k = j;
+        }
+        
+    }
+
     //打印所需要的函数
     void putNumberInLine( int num, string &line, int index_cur_level, int cur_tree_width, bool isLeft){
 
@@ -186,15 +202,32 @@ public:
         count++;
         shiftUp(count);
     }
+
+    //取出元素
+    Item exractMax(){
+        assert(count>0);
+        Item ret = data[1];
+        swap(data[1],data[count]);
+        count--;
+        shiftDown(1);
+        
+        return ret;
+    }
 };
 
 int main(){
     MaxHeap<int> maxheap = MaxHeap<int>(100);
     cout<<maxheap.size()<<endl;
     srand(time(NULL));
-    for(int i = 0;i<15;i++)
+    for(int i = 0;i<50;i++)
         maxheap.insert(rand()%100);
-    maxheap.testPrint();
+
+    while (!maxheap.isEmpty())
+    {
+       cout<<maxheap.exractMax()<<" ";
+    }
+    cout<<endl;
+   // maxheap.testPrint();
     return 0;
 }
 
