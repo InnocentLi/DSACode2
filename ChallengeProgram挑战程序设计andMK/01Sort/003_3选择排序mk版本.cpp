@@ -4,18 +4,18 @@
 using namespace std;
 void selectionSort(int arr[],int n){
     for(int i = 0;i<n;i++){
-        // 寻找最小值
+        // 寻找[i,n]区间最小值
         int minIndex = i;
         for(int j = i+1;j<n;j++){
             if(arr[j]<arr[minIndex]){
                 minIndex = j;
-                swap(arr[i],arr[minIndex]);
             }   
+            swap(arr[i],arr[minIndex]);
         }
     }
 }
 int main(){
-     int a[10] = {8,9,6,4,3,1,10,2,5};
+     int a[10] = {8,9,6,4,3,1,10,2,5,7};
      selectionSort(a,10);
      for(int i = 0;i<10;i++){
          cout<<a[i]<<" ";
