@@ -1,4 +1,7 @@
 public class LinearSearch {
+    private LinearSearch(){
+
+    }
     public int search(int[] data,int target){
         for(int i = 0;i < data.length;i++){
              if(data[i]==target){
@@ -13,9 +16,11 @@ public class LinearSearch {
         LinearSearch ls = new LinearSearch();
         int res = ls.search(data,321);
         System.out.println(res);
-          
+
         int res2 = ls.search(data,6666);
         System.out.println(res2);
 
+
+        
      }
 }
